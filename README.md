@@ -1,15 +1,10 @@
 # Exchange Entropy (EEI)
 
-
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![OSF DOI](https://img.shields.io/badge/OSF-10.17605%2FOSF.IO%2F6NJE9-blue)](https://osf.io/6nje9/)
-
 [![OSF Project](https://img.shields.io/badge/OSF-10.17605%2FOSF.IO%2F6NJE9-blue)](https://osf.io/6nje9/)
-[![ResearchGate](https://img.shields.io/badge/ResearchGate-Scott__Sun-00CCBB?logo=researchgate)](https://www.researchgate.net/profile/Scott-Sun)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+### An Operational Metric for Information Processing Fidelity in Financial Markets
 
 ### An Operational Metric for Information Processing Fidelity in Financial Markets
 
