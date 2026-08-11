@@ -1,3 +1,37 @@
+---
+layout: default
 title: Exchange Entropy (EEI)
-description: An Operational Metric for Information Processing Fidelity in Financial Markets
-theme: jekyll-theme-cayman # 可选主题：cayman, minimalist, primer, slate
+---
+
+# Exchange Entropy ($H_{ex}$) & EEI Index
+
+### An Operational Metric for Information Processing Fidelity in Financial Markets
+
+Welcome to the official documentation page for the **INFO-PHYS-SILO** research framework led by Scott Sun.
+
+---
+
+## 📌 Quick Links
+
+- [GitHub Repository](https://github.com/suns1232023/exchange-entropy-eei)
+- [OSF Project Registration](https://osf.io/6nje9/)
+- [Zenodo Preprint Repository](https://doi.org/10.5281/zenodo.20695859)
+
+---
+
+## 🔬 Theoretical Framework
+
+The realized Exchange Entropy accounts for semantic distortion $D(\sigma)$ driven by silo intensity $\sigma$:
+
+$$H_{ex} = I(\mathcal{I}; P) - \kappa \cdot D(\sigma)$$
+
+Operationalized Exchange Entropy Index ($EEI$):
+
+$$EEI(j,t) = \frac{\text{Cov}(\Delta F_{jt}, \Delta P_{jt}) - \text{Cov}(\Delta N_{jt}, \Delta P_{jt})}{\text{Var}(\Delta P_{jt})}$$
+
+---
+
+## 📖 Key Documentation
+
+* **[Theoretical Framework](./theoretical_framework.md)**: Phase transition dynamics & IP-EMH formulation.
+* **[API Reference](./api_reference.md)**: Python estimator implementations (`eei_calculator.py`).
