@@ -6,8 +6,6 @@
 
 ### An Operational Metric for Information Processing Fidelity in Financial Markets
 
-### An Operational Metric for Information Processing Fidelity in Financial Markets
-
 This repository provides the official implementation of **Exchange Entropy ($H_{ex}$)** and the **Exchange Entropy Index (EEI)**, developed under the **INFO-PHYS-SILO** research framework led by Scott Sun.
 
 ---
