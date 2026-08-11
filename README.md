@@ -1,8 +1,15 @@
 # Exchange Entropy (EEI)
 
+
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![OSF DOI](https://img.shields.io/badge/OSF-10.17605%2FOSF.IO%2F6NJE9-blue)](https://osf.io/6nje9/)
+
+[![OSF Project](https://img.shields.io/badge/OSF-10.17605%2FOSF.IO%2F6NJE9-blue)](https://osf.io/6nje9/)
+[![ResearchGate](https://img.shields.io/badge/ResearchGate-Scott__Sun-00CCBB?logo=researchgate)](https://www.researchgate.net/profile/Scott-Sun)
+[![License: CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ### An Operational Metric for Information Processing Fidelity in Financial Markets
 
@@ -74,3 +81,32 @@ Where:
 │   └── test_eei_calculator.py
 ├── LICENSE                     # Code under MIT, Content under CC-BY 4.0
 └── README.md
+
+## Citation
+
+If you use this codebase or theoretical framework in your research, please cite:
+
+```bibtex
+@article{sun2026information,
+  title={Information Silos and Market Efficiency Decay: A Network-Mediated Model of Pricing Degradation in Fragmented Information Environments},
+  author={Sun, Scott},
+  journal={Working Paper},
+  year={2026},
+  doi={10.5281/zenodo.20607052}
+}
+
+@article{sun2026exchange,
+  title={Exchange Entropy in Financial Information Processing: An Operational Metric for Information Processing Fidelity in Asset Markets},
+  author={Sun, Scott},
+  journal={Working Paper},
+  year={2026},
+  doi={10.5281/zenodo.20695859}
+}
+
+@article{sun2026market,
+  title={Market Phase Transitions and the Information Physics of Financial Systems: Toward a Unified Framework Integrating Exchange Entropy, Network Topology, and Collective Information Processing},
+  author={Sun, Scott},
+  journal={Working Paper},
+  year={2026},
+  doi={10.5281/zenodo.20789616}
+}
