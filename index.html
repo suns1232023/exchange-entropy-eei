@@ -1,1 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exchange Entropy Index (EEI) — INFO-PHYS-SILO Framework</title>
+    
+    <!-- MathJax 3 Configuration for Perfect LaTeX Rendering -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+    <style>
+        :root {
+            --primary-color: #0969da;
+            --accent-color: #1f883d;
+            --bg-secondary: #f6f8fa;
+            --border-color: #d0d7de;
+            --text-primary: #1f2328;
+            --text-secondary: #656d76;
+            --phase-emh: #dafbe1;
+            --phase-emh-text: #1a7f37;
+            --phase-amh: #fff8c5;
+            --phase-amh-text: #9a6700;
+            --phase-bubble: #ffebe9;
+            --phase-bubble-text: #cf222e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            color: var(--text-primary);
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 24px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #0f172a;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 1.15em;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+
+        .badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .badge-img {
+            height: 22px;
+            vertical-align: middle;
+        }
+
+        .quote-box {
+            background-color: var(--bg-secondary);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 8px 8px 0;
+            padding: 18px 22px;
+            margin: 25px 0;
+            font-style: italic;
+            font-size: 1.05em;
+            color: #334155;
+        }
+
+        h2 {
+            font-size: 1.45em;
+            font-weight: 600;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+            margin-top: 40px;
+            margin-bottom: 18px;
+        }
+
+        .formula-card {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
+        }
+
+        /* Academic Table Styling */
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            text-align: left;
+        }
+
+        th {
+            border-top: 2px solid #0f172a;
+            border-bottom: 1px solid #0f172a;
+            padding: 12px 14px;
+            font-weight: 600;
+            background-color: var(--bg-secondary);
+        }
+
+        td {
+            padding: 12px 14px;
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: top;
+        }
+
+        tr:last-child td {
+            border-bottom: 2px solid #0f172a;
+        }
+
+        /* Phase Badges */
+        .phase-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            font-size: 0.85em;
+            font-weight: 600;
+            border-radius: 12px;
+            white-space: nowrap;
+        }
+
+        .phase-i { background-color: var(--phase-emh); color: var(--phase-emh-text); }
+        .phase-ii { background-color: var(--phase-amh); color: var(--phase-amh-text); }
+        .phase-iii { background-color: var(--phase-bubble); color: var(--phase-bubble-text); }
+        .phase-boundary { background-color: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; }
+
+        /* Tri-Paper Grid */
+        .paper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .paper-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            background: #ffffff;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .paper-card h3 {
+            margin-top: 0;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+
+        .paper-card .doi-link {
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 8px;
+        }
+
+        .btn-github {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #24292f;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95em;
+            margin-top: 10px;
+        }
+
+        .btn-github:hover {
+            background-color: #444c56;
+        }
+
+        pre {
+            background-color: var(--bg-secondary);
+            padding: 16px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85em;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Exchange Entropy Index (EEI)</h1>
+        <div class="subtitle">An Operational Metric for Information Processing Fidelity in Financial Markets</div>
+        <div class="badges">
+            <a href="https://doi.org/10.5281/zenodo.20695859" target="_blank">
+                <img class="badge-img" src="https://zenodo.org/badge/DOI/10.5281/zenodo.20695859.svg" alt="Zenodo DOI">
+            </a>
+            <img class="badge-img" src="https://img.shields.io/badge/Framework-INFO--PHYS--SILO-blue" alt="INFO-PHYS-SILO Framework">
+            <img class="badge-img" src="https://img.shields.io/badge/License-MIT%2FCC--BY--4.0-yellow" alt="License">
+        </div>
+    </header>
+
+    <div class="quote-box">
+        "This framework shifts the paradigm from choosing 'who is right' (EMH vs. Behavioral Finance) to quantifying 'which state the market is in' on a continuous spectrum."
+    </div>
+
+    <section>
+        <h2>💡 Core Innovation: Unifying EMH & Behavioral Finance</h2>
+        <p>Financial economics has long suffered from a structural conflict between the <strong>Efficient Market Hypothesis (EMH)</strong> (Fama, 1970) and <strong>Behavioral Finance</strong> (Shiller, Thaler, et al.). While EMH assumes rational agents and complete arbitrage, Behavioral Finance highlights cognitive biases leading to systematic price distortions.</p>
+        
+        <p>Applying Occam's Razor, the <strong>INFO-PHYS-SILO framework</strong> unifies both schools under a single continuous state variable—<strong>Exchange Entropy Index (EEI)</strong>:</p>
+        <ul>
+            <li><strong>EMH Regime ($EEI \to 1.0$):</strong> Efficient information processing driven by fundamental signals.</li>
+            <li><strong>Behavioral Anomalies ($EEI < 0$):</strong> Narrative dominance, echo-chamber isolation, and speculative bubbles.</li>
+        </ul>
+        <p>Transition occurs naturally as the information isolation intensity ($\sigma$) crosses critical thermodynamic thresholds.</p>
+    </section>
+
+    <section>
+        <h2>🏗️ The Tri-Paper Unification Architecture</h2>
+        <div class="paper-grid">
+            <div class="paper-card">
+                <h3>Paper A: Degradation Mechanism</h3>
+                <p>Introduces network topology and spatial isolation intensity ($\sigma$) to demonstrate how structural information silos cause continuous degradation of market pricing quality.</p>
+                <a class="doi-link" href="https://doi.org/10.5281/zenodo.20607052" target="_blank">DOI: 10.5281/zenodo.20607052</a>
+            </div>
+            <div class="paper-card">
+                <h3>Paper B: Operational Measurement</h3>
+                <p>Formulates realized Exchange Entropy $H_{ex}$ and operationalizes $EEI$ through covariance decomposition of fundamental signals vs. narrative noise.</p>
+                <a class="doi-link" href="https://doi.org/10.5281/zenodo.20695859" target="_blank">DOI: 10.5281/zenodo.20695859</a>
+            </div>
+            <div class="paper-card">
+                <h3>Paper C: Phase Transitions</h3>
+                <p>Applies physics phase transition theory to model how markets abruptly shift from rational pricing to "irrational exuberance" at critical thresholds.</p>
+                <a class="doi-link" href="https://doi.org/10.5281/zenodo.20789616" target="_blank">DOI: 10.5281/zenodo.20789616</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>🔬 Mathematical Definition</h2>
+        <p>The realized Exchange Entropy accounts for semantic distortion $D(\sigma)$ driven by silo intensity $\sigma$:</p>
+        <div class="formula-card">
+            $$H_{ex} = I(\mathcal{I}; P) - \kappa \cdot D(\sigma)$$
+        </div>
+
+        <p>For empirical estimation, $EEI$ is operationalized via a covariance decomposition of normalized market price changes:</p>
+        <div class="formula-card">
+            $$EEI(j,t) = \frac{\text{Cov}(\Delta F_{jt}, \Delta P_{jt}) - \text{Cov}(\Delta N_{jt}, \Delta P_{jt})}{\text{Var}(\Delta P_{jt})}$$
+        </div>
+        <p style="font-size: 0.9em; color: var(--text-secondary);">
+            Where $\Delta F_{jt}$ represents standardized fundamental surprise, $\Delta N_{jt}$ is standardized narrative intensity, and $\Delta P_{jt}$ is the normalized price change over the estimation window.
+        </p>
+    </section>
+
+    <section>
+        <h2>📊 Interpretation Thresholds & Phase Regimes</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>EEI Value</th>
+                        <th>Regime / Phase</th>
+                        <th>Market Interpretation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>$1.0$</strong></td>
+                        <td><span class="phase-tag phase-i">Phase I: High-EEI</span> ($\sigma < \sigma_{c1}$)</td>
+                        <td>Fundamental-driven price formation; fully aligned with the Efficient Market Hypothesis (EMH).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>$0.3 - 0.7$</strong></td>
+                        <td><span class="phase-tag phase-ii">Phase II: Transitional</span> ($\sigma_{c1} < \sigma < \sigma_{c2}$)</td>
+                        <td>Mixed regime with heightened volatility; aligns with the Adaptive Markets Hypothesis (AMH).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>$0.0$</strong></td>
+                        <td><span class="phase-tag phase-boundary">Boundary State</span></td>
+                        <td>Neutral equilibrium; fundamental signals and narrative noise contribute equally to price dynamics.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>$< 0.0$</strong></td>
+                        <td><span class="phase-tag phase-iii">Phase III: Low-EEI</span> ($\sigma > \sigma_{c2}$)</td>
+                        <td>Narrative dominance and echo chamber isolation; indicative of speculative bubbles and crash risks.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <h2>📁 Repository Architecture</h2>
+        <pre><code>├── eei/                        # Core Python Package
+│   ├── eei_calculator.py       # Main EEI & covariance decomposition
+│   ├── fundamental_signals.py  # Earnings surprise & signal extraction
+│   ├── narrative_extraction.py # NLP pipeline (BERTopic/LDA) & sentiment scoring
+│   ├── network_metrics.py      # Cross-silo path length & network analysis
+│   └── utils.py                # Preprocessing and standardizers
+├── examples/                   # Executable Tutorials & Notebooks
+│   ├── example_eei_calculation.ipynb
+│   └── sample_data/            # Mock dataset (Prices, Fundamentals, Social Text)
+├── docs/                       # Theoretical Documentation
+└── tests/                      # Testing Suite</code></pre>
+    </section>
+
+    <section>
+        <h2>🚀 Code & Repository Access</h2>
+        <p>Access the official Python implementation and empirical calculation examples directly on GitHub:</p>
+        <p>
+            <a class="btn-github" href="https://github.com/" target="_blank">
+                <svg height="20" width="20" viewBox="0 0 16 16" fill="white"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+                View EEI Repository on GitHub
+            </a>
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2026 Scott Sun. INFO-PHYS-SILO Research Framework. Code under MIT License, Content under CC BY 4.0.</p>
+    </footer>
+
+</body>
+</html>
