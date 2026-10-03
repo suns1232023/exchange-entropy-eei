@@ -18,3 +18,18 @@ Automated metrics logged by GitHub Actions CI/CD Pipeline.
 | Sample Size | `30` |
 
 ---
+
+## 📈 Daily EEI Calculation Log (2026-10-03 04:48:18)
+
+| Metric | Value |
+| :--- | :--- |
+| **Execution Timestamp** | `2026-10-03 04:48:18` |
+| **Exchange Entropy Index ($EEI$)** | **`0.4662`** |
+| **Current Market Phase** | **`Phase II: Transitional`** |
+| **Phase Description** | Mixed regime with heightened volatility; aligns with Adaptive Markets Hypothesis (AMH). |
+| $\text{Cov}(\Delta F, \Delta P)$ | `0.000327` |
+| $\text{Cov}(\Delta N, \Delta P)$ | `6e-05` |
+| $\text{Var}(\Delta P)$ | `0.000572` |
+| Sample Size | `30` |
+
+---
