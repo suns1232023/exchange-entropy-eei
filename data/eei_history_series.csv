@@ -9,3 +9,4 @@ timestamp,date,eei_value,regime,cov_fundamental_price,cov_narrative_price,var_pr
 2026-10-06 05:51:14,2026-10-06,0.598,Phase II: Transitional,0.000189,-1.7e-05,0.000345,30
 2026-10-07 05:23:32,2026-10-07,0.6712,Phase II: Transitional,0.000276,-1.8e-05,0.000438,30
 2026-10-08 05:32:21,2026-10-08,0.5868,Phase II: Transitional,0.000244,-1.5e-05,0.00044,30
+2026-10-09 05:36:13,2026-10-09,0.7083,Phase I: High-EEI,0.000231,-0.000115,0.000488,30
