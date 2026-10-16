@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-10-15 04:06:42",
-  "date": "2026-10-15",
-  "eei_value": 0.4783,
+  "timestamp": "2026-10-16 04:02:52",
+  "date": "2026-10-16",
+  "eei_value": 0.6559,
   "regime": "Phase II: Transitional",
   "regime_description": "Mixed regime with heightened volatility; aligns with Adaptive Markets Hypothesis (AMH).",
-  "cov_fundamental_price": 0.000188,
-  "cov_narrative_price": 2.9e-05,
-  "var_price": 0.000332,
+  "cov_fundamental_price": 0.000236,
+  "cov_narrative_price": -2e-05,
+  "var_price": 0.00039,
   "sample_size": 30
 }
