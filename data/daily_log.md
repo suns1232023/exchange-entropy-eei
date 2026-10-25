@@ -348,3 +348,18 @@ Automated metrics logged by GitHub Actions CI/CD Pipeline.
 | Sample Size | `30` |
 
 ---
+
+## 📈 Daily EEI Calculation Log (2026-10-25 04:08:48)
+
+| Metric | Value |
+| :--- | :--- |
+| **Execution Timestamp** | `2026-10-25 04:08:48` |
+| **Exchange Entropy Index ($EEI$)** | **`0.9228`** |
+| **Current Market Phase** | **`Phase I: High-EEI`** |
+| **Phase Description** | Fundamental-driven price formation; fully aligned with Efficient Market Hypothesis (EMH). |
+| $\text{Cov}(\Delta F, \Delta P)$ | `0.000162` |
+| $\text{Cov}(\Delta N, \Delta P)$ | `-7.9e-05` |
+| $\text{Var}(\Delta P)$ | `0.000262` |
+| Sample Size | `30` |
+
+---
