@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-10-28 05:03:45",
-  "date": "2026-10-28",
-  "eei_value": 0.2546,
-  "regime": "Boundary State",
-  "regime_description": "Neutral equilibrium; fundamental signals and narrative noise contribute equally.",
-  "cov_fundamental_price": 0.000416,
-  "cov_narrative_price": 0.000255,
-  "var_price": 0.000635,
+  "timestamp": "2026-10-29 05:16:24",
+  "date": "2026-10-29",
+  "eei_value": 0.7558,
+  "regime": "Phase I: High-EEI",
+  "regime_description": "Fundamental-driven price formation; fully aligned with Efficient Market Hypothesis (EMH).",
+  "cov_fundamental_price": 0.000135,
+  "cov_narrative_price": -2.3e-05,
+  "var_price": 0.000209,
   "sample_size": 30
 }
