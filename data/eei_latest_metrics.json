@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-11-03 06:07:14",
-  "date": "2026-11-03",
-  "eei_value": 0.1023,
-  "regime": "Boundary State",
-  "regime_description": "Neutral equilibrium; fundamental signals and narrative noise contribute equally.",
-  "cov_fundamental_price": 0.000166,
-  "cov_narrative_price": 0.00013,
-  "var_price": 0.00036,
+  "timestamp": "2026-11-04 05:46:03",
+  "date": "2026-11-04",
+  "eei_value": 0.6548,
+  "regime": "Phase II: Transitional",
+  "regime_description": "Mixed regime with heightened volatility; aligns with Adaptive Markets Hypothesis (AMH).",
+  "cov_fundamental_price": 0.000248,
+  "cov_narrative_price": -1.2e-05,
+  "var_price": 0.000397,
   "sample_size": 30
 }
