@@ -693,3 +693,18 @@ Automated metrics logged by GitHub Actions CI/CD Pipeline.
 | Sample Size | `30` |
 
 ---
+
+## 📈 Daily EEI Calculation Log (2026-11-17 07:28:16)
+
+| Metric | Value |
+| :--- | :--- |
+| **Execution Timestamp** | `2026-11-17 07:28:16` |
+| **Exchange Entropy Index ($EEI$)** | **`0.2658`** |
+| **Current Market Phase** | **`Boundary State`** |
+| **Phase Description** | Neutral equilibrium; fundamental signals and narrative noise contribute equally. |
+| $\text{Cov}(\Delta F, \Delta P)$ | `0.000241` |
+| $\text{Cov}(\Delta N, \Delta P)$ | `0.000108` |
+| $\text{Var}(\Delta P)$ | `0.000502` |
+| Sample Size | `30` |
+
+---
