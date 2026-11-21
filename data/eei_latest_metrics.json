@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-11-20 06:43:21",
-  "date": "2026-11-20",
-  "eei_value": 0.7509,
-  "regime": "Phase I: High-EEI",
-  "regime_description": "Fundamental-driven price formation; fully aligned with Efficient Market Hypothesis (EMH).",
-  "cov_fundamental_price": 0.00013,
-  "cov_narrative_price": -0.000109,
-  "var_price": 0.000318,
+  "timestamp": "2026-11-21 06:36:33",
+  "date": "2026-11-21",
+  "eei_value": 0.5195,
+  "regime": "Phase II: Transitional",
+  "regime_description": "Mixed regime with heightened volatility; aligns with Adaptive Markets Hypothesis (AMH).",
+  "cov_fundamental_price": 0.000252,
+  "cov_narrative_price": 5.1e-05,
+  "var_price": 0.000387,
   "sample_size": 30
 }
