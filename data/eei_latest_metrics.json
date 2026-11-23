@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-11-22 06:04:17",
-  "date": "2026-11-22",
-  "eei_value": 0.855,
+  "timestamp": "2026-11-23 06:56:48",
+  "date": "2026-11-23",
+  "eei_value": 0.8097,
   "regime": "Phase I: High-EEI",
   "regime_description": "Fundamental-driven price formation; fully aligned with Efficient Market Hypothesis (EMH).",
-  "cov_fundamental_price": 0.000141,
-  "cov_narrative_price": -5.1e-05,
-  "var_price": 0.000224,
+  "cov_fundamental_price": 0.000282,
+  "cov_narrative_price": -0.000133,
+  "var_price": 0.000513,
   "sample_size": 30
 }
